@@ -1,0 +1,106 @@
+% !TEX program=xelatex
+
+\documentclass[aspectratio=169]{beamer}
+
+% У зависности од тога да ли желимо да пишемо на ћирилици или латиници, потребно је учитати тачно један од наредних модула пакета babel:
+% 1) за ћирилицу: serbianc
+% 1) за латиницу: serbian
+\usepackage[serbianc]{babel}
+% \usepackage[serbian]{babel}
+
+% Стилови презентације
+\usepackage{stilovi/beamerthemematf}
+\usepackage{stilovi/beamerfontthemematf}
+
+% Приказивање секције из садржаја пре сваког наслова
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Садржај}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+% Информације за насловну страницу 
+\title{Наслов}
+\author{предавач}
+\date{\today}
+
+% Почетак документа
+\begin{document}
+
+% Креирање насловне странице
+\frame{\titlepage}
+
+% Садржај
+\begin{frame}
+    \frametitle{Садржај}
+    \tableofcontents
+\end{frame}
+
+\section{Секција 1}
+
+% Први фрејм од 4 слајда
+\begin{frame}
+    \frametitle{поднаслов}
+
+    Текст ван набрајања.
+
+    \begin{itemize}
+        \item<1-> Текст видљив од слајда 1
+        \item<2-> Текст видљив од слајда 2
+        \item<3> Текст видљив само на слајду 3
+        \item<4-> Текст видљив од слајда 4
+    \end{itemize}
+\end{frame}
+
+\section{Секција 2}
+
+% Други фрејм од 3 слајда
+\begin{frame}
+    \frametitle{поднаслов}
+
+    У овом слајду \pause
+
+    текст ће бити парцијално видљив. \pause
+
+    Коначно, све ће бити видљиво у последњем слајду.
+\end{frame}
+
+% Трећи фрејм од 1 слајда
+\begin{frame}
+    \frametitle{поднаслов}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            Овај слајд има 2 колоне истих ширина \\
+            који се састоји од:
+
+            \begin{itemize}
+                \item Текста са леве стране
+                
+                \item Слике са десне стране
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center}
+                \includegraphics[width=0.5\textwidth]{resursi/slika.png}
+            \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% Четврти фрејм од 1 слајда
+\begin{frame}[fragile]
+    \frametitle{поднаслов}
+
+    Ово је пример једног изворног кода:
+
+\begin{lstlisting}[language=C++]
+Class x;
+std::vector<Class> xs;
+xs.push_back(x);
+\end{lstlisting}
+\end{frame}
+
+\end{document}

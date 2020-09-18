@@ -1,0 +1,25 @@
+\usepackage[T2A]{fontenc}
+\usepackage{fontspec}
+\newfontfamily\cyrillicfont[Script=Cyrillic]{Calibri}
+
+\def\beamer@ftb@str{
+    \setbeamerfont{structure}{family=\cyrillicfont}
+    \setbeamerfont{block title}{size={}}
+}
+\def\beamer@ftb@tstr{\setbeamerfont{tiny structure}{family=\cyrillicfont}}
+
+\setbeamerfont{normal text}{family=\cyrillicfont}
+\AtBeginDocument{\usebeamerfont{normal text}}
+
+\DeclareOptionBeamer{onlysmall}{\let\beamer@ftb@str=\relax}
+\DeclareOptionBeamer{onlylarge}{\let\beamer@ftb@tstr=\relax}
+
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\beamer@ftb@str
+\beamer@ftb@tstr
+
+\mode
+<all>

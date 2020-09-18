@@ -1,0 +1,21 @@
+\mode<presentation>
+
+\usepackage{tikz}
+
+\defbeamertemplate*{headline}{matf}
+{%
+\begin{tikzpicture}
+    \node[anchor=north east, inner sep=0] (image) at (0, 0) {\includegraphics[width=4cm]{stilovi/logo.png}};
+    \node[anchor=north west, inner sep=0] (image) at (10, 0) {\includegraphics[width=2cm]{stilovi/logo2.png}};
+\end{tikzpicture}
+}
+
+\defbeamertemplate*{footline}{matf}
+{%
+\begin{tikzpicture}
+    \node[anchor=north east, inner sep=0] (image) at (0, 0) {\includegraphics[width=\textwidth]{stilovi/footer.png}};
+\end{tikzpicture}
+}
+
+\mode
+<all>
