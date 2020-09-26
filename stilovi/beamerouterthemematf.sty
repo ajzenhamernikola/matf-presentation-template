@@ -13,8 +13,36 @@
 \defbeamertemplate*{footline}{matf}
 {%
 \begin{tikzpicture}
-    \node[anchor=north east, inner sep=0] (image) at (0, 0) {\includegraphics[width=\textwidth]{stilovi/footer.png}};
+    \node[anchor=north east, inner sep=0] (image) at (0, -0.5) {\includegraphics[width=\textwidth]{stilovi/footer.png}};
+
+    \node[anchor=north west, inner sep=0] () at (-1.5, 0) {{\large\insertframenumber\,/\,\inserttotalframenumber}};
 \end{tikzpicture}
+}
+
+\defbeamertemplate*{frametitle}{matf}[1][left]
+{%
+%  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+%  \@tempdima=\textwidth%
+%  \advance\@tempdima by\beamer@leftmargin%
+%  \advance\@tempdima by\beamer@rightmargin%
+%  \begin{beamercolorbox}[sep=0.3cm,#1,wd=\the\@tempdima]{frametitle}
+%    \usebeamerfont{frametitle}%
+%    \vbox{}\vskip-1ex%
+%    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+%    \strut\insertframetitle\par%
+%    {%
+%      \ifx\insertframesubtitle\@empty%
+%      \else%
+%      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\strut\insertframesubtitle\par}%
+%      \fi
+%    }%
+%    \vskip-3ex% Added this to lower the title
+%    \if@tempswa\else\vskip-.3cm\fi%
+%  \end{beamercolorbox}%
+%  \vspace*{-1.5cm} % Added this to move the content upwards
+  	\vspace*{-0.5cm}
+  	\hspace*{-0.4cm}\insertframetitle
+  	\vspace*{-0.3cm}
 }
 
 \mode
